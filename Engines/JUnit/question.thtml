@@ -1,0 +1,11 @@
+<div class="ounitdescription">
+%%DESCRIPTION%%
+</div>
+<div>
+<textarea name="%%IDPREFIX%%code" cols="80" rows="25">%%CODE_TEMPLATE%%</textarea>
+</div>
+<input type="submit" name="%%IDPREFIX%%compile" value="Compile" />
+<input type="submit" name="%%IDPREFIX%%grade" value="Grade" />
+<div class="ounitresults">
+%%RESULTS%%
+</div>

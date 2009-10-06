@@ -1,0 +1,25 @@
+<div class="ounitdescription">
+%%DESCRIPTION%%
+</div>
+
+<div style="margin: 1em;">
+Lahendamiseks vajalikud failid:
+<a href="%%RESOURCES%%/%%QF%%">files.zip</a>
+</div>
+
+<div>
+Lahendus aseta (copy-paste) siia<br />
+<!-- <input name="%%IDPREFIX%%answerfile" type="file"
+       accept="text/plain, text/css, text/html" size="43" /> -->
+
+<textarea name="%%IDPREFIX%%code" cols="80" rows="10" style="overflow: scroll"></textarea>
+</div>
+
+<div>
+<input type="submit" name="%%IDPREFIX%%test" value="Test" />
+<input type="submit" name="%%IDPREFIX%%grade" value="Grade" />
+</div>
+
+<div class="ounitresults">
+%%RESULTS%%
+</div>

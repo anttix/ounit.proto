@@ -1,0 +1,21 @@
+<?php
+
+// define('JAVAC',     'javac');
+// define('JAVA',      'java');
+// define('JUNIT_JAR', '/usr/share/java/junit4.jar');
+// define('SELENIUM_JAR', '/home/anttix/tmp/selenium-java-client-driver.jar');
+// define('ROOT',      'http://localhost/moodle/anttix/ounit');
+
+define('JAVA',         dirname(__FILE__) . '/../jdk/bin/java');
+define('JAVAC',        dirname(__FILE__) . '/../jdk/bin/javac');
+define('JUNIT_JAR',    dirname(__FILE__) . '/../junit4.jar');
+define('SELENIUM_JAR', dirname(__FILE__) . '/../selenium-java-client-driver.jar');
+define('ROOT',         'http://qe.anttix.org/ounit');
+
+// define('ANSURL',    'http://localhost/ounit/tmp');
+define('ANSURL',    ROOT . '/tmp');
+define('POLICY',    dirname(__FILE__) . '/Engines/JUnit/junit.policy');
+// define('SSRV',      dirname(__FILE__) . '/run-selenium');
+define('SSRV',      '/usr/local/sbin/run-selenium');
+
+?>

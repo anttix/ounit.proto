@@ -1,0 +1,9 @@
+* Send Stylesheet
+* Make screenshot on failure
+* Implement selenium-rc as server and pass commands directly to it (no JUnit,
+  no testrunners or other crap).
+* Implement hard compile limits
+* Find out what the fuck is going on?
+  - Sisesta kood. Test. Navigeeri paar lehekülge ettepoole.
+    Navigeeri tagasi -> tehakse uus küsimuse sessioon!? WTF?!
+* Do not decrement counter on timeouts or other test failures.

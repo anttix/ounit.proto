@@ -1,0 +1,18 @@
+* Security! SessionID MUST be sanitized before trusting it blindly.
+* Use CSS.
+* More sane formatting of tester and compiler output
+* Compiler infrastructure must be pluggable (OOP code needed)
+* Code printing with line numbers and highlights.
+* Investigate re-submitting logic - maybe possible when quiz runs in
+  "adaptive" mode.
+* Store result in session, save to moodle on Grade.
+* Only re-compile, when compile button was selected.
+* Error testing.
+  - Compiler killed
+  - Unit test killed
+  - QE temporariliy down
+* Grey out grade button if code has been never compiled.
+* Selenium: implement test sanitizer:
+  filter out bogus <link rel="selenium.base" href="This Crap Here!" /> elements
+  filter out bogus Open commands
+* Selenium: uurida mis nuss on testi tulemuste kuvamisel täpitähtedega
