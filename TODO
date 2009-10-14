@@ -16,3 +16,7 @@
   filter out bogus <link rel="selenium.base" href="This Crap Here!" /> elements
   filter out bogus Open commands
 * Selenium: uurida mis nuss on testi tulemuste kuvamisel täpitähtedega
+* Do not re-send resources that are already present if they haven't changed
+* Investigate possible support for adaptive Quiz-es.
+* Fix opaque's file.php to send correct filename.
+* Fix opaque to not re-open sessions on quiz page change

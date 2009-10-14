@@ -8,6 +8,10 @@ class SeleniumEngine {
         $this->parent = &$parent;
     }
 
+    public function getMarks($questionID) {
+        return 3;
+    }
+
     public function get_session_variable($var) {
         return $this->parent->get_session_variable($var);
     }

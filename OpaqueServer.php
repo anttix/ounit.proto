@@ -63,7 +63,8 @@ class OpaqueServer {
      */
     public function getQuestionMetadata($questionID, $questionVersion,
                                         $questionBaseURL) {
-        $marks = 3;
+
+        $marks = $this->findEngine($questionID)->getMarks($questionID);
         $plainmode = 'yes';
 
         $xml  = '<questionmetadata>'."\n";
