@@ -61,7 +61,6 @@ class JUnitEngine {
                 $codechanged = true;
 
             $code = $response["code"];
-            $this->set_session_variable("code", $code);
         } else {
             $code = $this->load_code($questionID);
 
@@ -79,7 +78,7 @@ class JUnitEngine {
         }
         /* Only compile if instructed, code changed or our
            poor fool tried to grade w/o ever trying to compile */
-	if(isset($response["compile"]) || $codechanged == true ||
+	if(isset($response["compile"]) || /* $codechanged == true || */
            ($score == null && $grade == true)) {
 
             $co = $this->compile($code, $questionSession);
@@ -102,6 +101,7 @@ class JUnitEngine {
 
             $output = $this->output_xhtml($co, $to);
             $this->set_session_variable("score", $score);
+            $this->set_session_variable("code", $code);
             $this->set_session_variable("output", $output);
             $this->set_session_variable("ncompile", $ncompile);
 
@@ -234,6 +234,7 @@ class JUnitEngine {
         $r->encoding = "binary";
         $r->filename = "/AnswerTest.class";
         $r->mimeType = "application/x-java-class";
+        //$r->mimeType = 'application/octet-stream; name="AnswerTest.class"';
 
         return $r;
     }

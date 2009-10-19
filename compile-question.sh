@@ -3,10 +3,11 @@
 JAVAC=javac
 JAVA=java
 JUNIT=/usr/share/java/junit4.jar
+OUNIT=/srv/ounit/Engines/JUnit
 POLICY=/srv/ounit/junit.policy
 
-$JAVAC -cp $JUNIT:. AnswerTest.java && \
-$JAVA -cp $JUNIT:. -Djava.security.manager -Djava.security.policy=$POLICY \
+$JAVAC -cp $JUNIT:$OUNIT:. AnswerTest.java && \
+$JAVA -cp $JUNIT:$OUNIT:. -Djava.security.manager -Djava.security.policy=$POLICY \
      org.junit.runner.JUnitCore AnswerTest 2>&1 \
                     | grep -v '^[ 	]*at'
 
