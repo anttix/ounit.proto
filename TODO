@@ -1,10 +1,10 @@
 * Security! SessionID MUST be sanitized before trusting it blindly.
+* Security! Helpers used in Unit tests must not be available to
+  students. Use different classpaths for compiling and executing?
 * Use CSS.
 * More sane formatting of tester and compiler output
 * Compiler infrastructure must be pluggable (OOP code needed)
 * Code printing with line numbers and highlights.
-* Investigate re-submitting logic - maybe possible when quiz runs in
-  "adaptive" mode.
 * Store result in session, save to moodle on Grade.
 * Only re-compile, when compile button was selected.
 * Error testing.
@@ -18,5 +18,12 @@
 * Selenium: uurida mis nuss on testi tulemuste kuvamisel täpitähtedega
 * Do not re-send resources that are already present if they haven't changed
 * Investigate possible support for adaptive Quiz-es.
+* Investigate re-submitting logic - maybe possible when quiz runs in
+  "adaptive" mode.
 * Fix opaque's file.php to send correct filename.
 * Fix opaque to not re-open sessions on quiz page change
+* SeleniumEngine 254. If out.html can't be read, utter error message
+  and Do NOT decrement attempt count.
+* JUnitEngine - try do distinguish between javac execution error and
+  compile error. As well as try to distinguish between Unit test error
+  and it's execution error.

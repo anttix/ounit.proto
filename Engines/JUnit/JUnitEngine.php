@@ -256,7 +256,7 @@ class JUnitEngine {
         file_put_contents('Answer.java', $code);
         $output = array();
 
-        $cmd = JAVAC.' Answer.java 2>&1';
+        $cmd = JAVAC.' -cp "'.JHELPERS.'" Answer.java 2>&1';
         exec($limit . ';' . $cmd, $output, $returncode);
 
         $ret = array($returncode, "");
@@ -294,7 +294,7 @@ class JUnitEngine {
 
         $output = array();
 
-        $cmd = JAVA.' -cp "'.JUNIT_JAR.':'.$qdir.':." '.
+        $cmd = JAVA.' -cp "'.JUNIT_JAR.':'.JHELPERS.':'.$qdir.':." '.
 	       '-Djava.security.manager -Djava.security.policy='.POLICY.
                ' org.junit.runner.JUnitCore AnswerTest 2>&1';
         exec($limit . ';' . $cmd, $output, $returncode);

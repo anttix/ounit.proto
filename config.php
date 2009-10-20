@@ -7,5 +7,6 @@ define('ROOT',      'http://autotest.itcollege.ee/ounit');
 define('ANSURL',    ROOT . '/tmp');
 define('E_JUNIT',   dirname(__FILE__) . '/Engines/JUnit');
 define('POLICY',    E_JUNIT . '/junit.policy');
+define('JHELPERS',  dirname(__FILE__) . '/helpers');
 define('SSRV',      dirname(__FILE__) . '/run-selenium');
 ?>
