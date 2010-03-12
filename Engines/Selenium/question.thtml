@@ -7,6 +7,10 @@ Lahendamiseks vajalikud failid:
 <a href="%%RESOURCES%%/%%QF%%">files.zip</a>
 </div>
 
+<div style="margin: 1em;">
+<strong>NB! brauseri tekitatud faili oskad ise ümber nimetada, eks?</strong>
+</div>
+
 <div>
 Lahendus aseta (copy-paste) siia<br />
 <!-- <input name="%%IDPREFIX%%answerfile" type="file"

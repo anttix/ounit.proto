@@ -8,6 +8,7 @@ class OpaqueServer {
 
     public function OpaqueServer() {
         $this->engines["i200"] = new JUnitEngine($this);
+        $this->engines["i231"] = new JUnitEngine($this);
         $this->engines["i202"] = new SeleniumEngine($this);
     }
 
