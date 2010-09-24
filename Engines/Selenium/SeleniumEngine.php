@@ -95,7 +95,8 @@ class SeleniumEngine {
         } 
 
         if($grade == true) {
-            $ret->XHTML = $this->results_xhtml($desc, $code, $output);
+            $ret->XHTML = "<!-- Session: $questionSession -->";
+            $ret->XHTML .= $this->results_xhtml($desc, $code, $output);
 	    $res = new Results();
             $res->scores[] = new Score(NULL, $score);
 	    $ret->results = $res;
