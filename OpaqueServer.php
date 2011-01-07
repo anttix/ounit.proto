@@ -107,6 +107,7 @@ class OpaqueServer {
         srand($this->trim_seed($seed));
 
         $this->set_session_variable("questionID", $questionID);
+        $this->set_session_variable("sessionID", $ret->questionSession);
 
         $this->findEngine($questionID)->do_start($ret, $questionID);
 
@@ -143,6 +144,7 @@ class OpaqueServer {
         }
 
         $this->init_session($questionSession);
+        $this->set_session_variable("sessionID", $questionSession);
         
         $questionID = $this->get_session_variable("questionID");
 
