@@ -40,6 +40,7 @@
      <element name="progressInfo" nillable="true" type="soapenc:string"/>
      <element name="questionSession" nillable="true" type="soapenc:string"/>
      <element name="resources" nillable="true" type="impl:ArrayOfResource"/>
+     <element name="head" nillable="true" type="soapenc:string"/>
     </sequence>
    </complexType>
 
@@ -96,6 +97,7 @@
      <element name="questionEnd" type="xsd:boolean"/>
      <element name="resources" nillable="true" type="impl:ArrayOfResource"/>
      <element name="results" nillable="true" type="impl:Results"/>
+     <element name="head" nillable="true" type="soapenc:string"/>
     </sequence>
    </complexType>
 
