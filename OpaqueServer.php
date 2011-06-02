@@ -5,11 +5,29 @@ require_once("Engines.php");
 
 class OpaqueServer {
    var $engines;
+   var $server;
 
     public function OpaqueServer() {
         $this->engines["i200"] = new JUnitEngine($this);
         $this->engines["i231"] = new JUnitEngine($this);
         $this->engines["i202"] = new SeleniumEngine($this);
+    }
+
+    public function delegate($questionID) {
+        global $delegateURL;
+
+        if(!isset($delegateURL))
+            return false;
+
+        $dir = getcwd();
+        if(is_dir($dir.'/questions/'.$questionID))
+            return false;
+
+        if($this->server == null) {
+            $this->server = new SoapClient($delegateURL . "?wsdl");
+        }
+
+        return true;
     }
 
     public function findEngine($questionID) {
@@ -69,6 +87,11 @@ class OpaqueServer {
     public function getQuestionMetadata($questionID, $questionVersion,
                                         $questionBaseURL) {
 
+        if($this->delegate($questionID))
+            return $this->server->getQuestionMetadata($questionID,
+                                                $questionVersion,
+                                                $questionBaseURL);
+
         $marks = $this->findEngine($questionID)->getMarks($questionID);
         $plainmode = 'yes';
 
@@ -102,6 +125,15 @@ class OpaqueServer {
         $seed = $initialParams['randomseed']; 
         $passKey = $initialParams['passKey']; 
 
+        if($this->delegate($questionID)) {
+            $ret = $this->server->start($questionID, $questionVersion,
+                                  $questionBaseURL, $initialParamNames,
+                                  $initialParamValues, $cachedResources);
+            $this->init_session($ret->questionSession);
+            $this->set_session_variable("questionID", $questionID);
+            return $ret;
+        }
+
         $ret = new StartReturn();
         $ret->questionSession = $this->init_session();
         $ret->progressInfo = '0'; // Tries left?
@@ -125,6 +157,10 @@ class OpaqueServer {
      * @return void
      */
     public function stop($questionSession) {
+        $questionID = $this->get_session_variable("questionID");
+        if($this->delegate($questionID)) {
+            $this->server->stop($questionSession);
+        }
         $this->destroy_session($questionSession);
     }
     
@@ -151,6 +187,11 @@ class OpaqueServer {
         $this->set_session_variable("sessionID", $questionSession);
         
         $questionID = $this->get_session_variable("questionID");
+
+        if($this->delegate($questionID)) {
+            return $this->server->process($questionSession,
+                                    $responseNames, $responseValues);
+        }
 
         $ret = new ProcessReturn();
 
