@@ -157,6 +157,7 @@ class OpaqueServer {
      * @return void
      */
     public function stop($questionSession) {
+        $this->init_session($questionSession);
         $questionID = $this->get_session_variable("questionID");
         if($this->delegate($questionID)) {
             $this->server->stop($questionSession);
