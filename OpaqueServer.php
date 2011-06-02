@@ -238,7 +238,7 @@ class OpaqueServer {
             return;
         }
 
-        $this->init_session($id);
+        //$this->init_session($id);
         $_SESSION = array();
         session_destroy();
     }
