@@ -14,6 +14,10 @@ class OpaqueServer {
 
     public function findEngine($questionID) {
         $arr = split("\.", $questionID);
+        if(!isset($this->engines[$arr[0]])) {
+            $err = "Can't find engine for question: " . $questionID;
+            throw new SoapFault("Server", $err);
+        }
         return $this->engines[$arr[0]];
     }
     
