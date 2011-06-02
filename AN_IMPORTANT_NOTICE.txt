@@ -1,0 +1,5 @@
+This is a prototype engine. Although it is fairly stable and
+has been actively used, it is now considered obsolete.
+Please download the new Maven-based system.
+
+Thank You!
